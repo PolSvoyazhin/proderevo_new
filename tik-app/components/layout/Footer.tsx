@@ -34,7 +34,7 @@ export default function Footer() {
             Т▪И▪К
           </div>
           <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6, maxWidth: 260 }}>
-            Premium outdoor мебель из тика Grade A. Бренд компании ПРО ДЕРЕВО. Сертификат FSC. Гарантия 15 лет.
+            Premium outdoor мебель из термоясеня, Ироко и тика. Бренд компании ПРО ДЕРЕВО. Производство Новороссийск. Гарантия 15 лет.
           </p>
         </div>
 

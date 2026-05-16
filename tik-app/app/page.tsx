@@ -129,7 +129,7 @@ export default function HomePage() {
               }}
             >
               {[
-                { value: 'Grade A', label: 'Тик Burma Forest' },
+                { value: 'Ироко', label: 'Термоясень, Ироко, Тик' },
                 { value: '15 лет', label: 'Гарантия' },
                 { value: 'FSC', label: 'Сертификат' },
                 { value: '20+', label: 'Лет на рынке' },
@@ -402,7 +402,7 @@ export default function HomePage() {
                 <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 36, fontWeight: 600, marginBottom: 8 }}>
                   Популярные модели
                 </h2>
-                <p style={{ fontSize: 15, color: 'var(--muted)' }}>Тик Grade A · Гарантия 15 лет · Сертификат FSC</p>
+                <p style={{ fontSize: 15, color: 'var(--muted)' }}>Термоясень, Ироко и тик · Гарантия 15 лет · Производство Новороссийск</p>
               </div>
               <Link
                 href="/catalog"
