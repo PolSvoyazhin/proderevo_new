@@ -26,6 +26,7 @@ function ProductCard({ product }: { product: Product }) {
       }}
     >
       {/* Image area */}
+      <Link href={`/catalog/${product.id}`} style={{ textDecoration: 'none' }}>
       <div
         style={{
           height: 240,
@@ -35,6 +36,7 @@ function ProductCard({ product }: { product: Product }) {
           justifyContent: 'center',
           position: 'relative',
           flexShrink: 0,
+          cursor: 'pointer',
         }}
       >
         <span style={{ fontSize: 64 }}>{icon}</span>
@@ -75,6 +77,7 @@ function ProductCard({ product }: { product: Product }) {
           {product.warrantyYears} лет гарантии
         </div>
       </div>
+      </Link>
 
       {/* Content */}
       <div style={{ padding: '20px 20px 24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
@@ -82,7 +85,9 @@ function ProductCard({ product }: { product: Product }) {
           {product.categoryLabel}
         </div>
         <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, fontWeight: 600, lineHeight: 1.3, marginBottom: 10 }}>
-          {product.name}
+          <Link href={`/catalog/${product.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+            {product.name}
+          </Link>
         </h3>
         <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 16, flex: 1 }}>
           {product.description}
