@@ -11,6 +11,7 @@ export default function HomePage() {
 
         {/* ── HERO ── */}
         <section
+          className="m-col-1 m-pt-sm m-pb-sm"
           style={{
             maxWidth: 1280,
             margin: '0 auto',
@@ -53,6 +54,7 @@ export default function HomePage() {
             </div>
 
             <h1
+              className="m-h1"
               style={{
                 fontFamily: 'Playfair Display, serif',
                 fontSize: 52,
@@ -145,7 +147,7 @@ export default function HomePage() {
           </div>
 
           {/* Hero mosaic */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: 12, height: 480 }}>
+          <div className="m-hide" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: 12, height: 480 }}>
             {GALLERY.slice(0, 4).map((project, i) => (
               <div
                 key={project.id}
@@ -179,7 +181,7 @@ export default function HomePage() {
         </section>
 
         {/* ── HOW IT WORKS ── */}
-        <section style={{ backgroundColor: 'var(--surface)', padding: '72px 24px' }}>
+        <section className="m-py-sm" style={{ backgroundColor: 'var(--surface)', padding: '72px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: 56 }}>
               <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 36, fontWeight: 600, marginBottom: 12 }}>
@@ -188,7 +190,7 @@ export default function HomePage() {
               <p style={{ fontSize: 16, color: 'var(--muted)' }}>Три шага — и вы видите мебель у себя</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+            <div className="m-col-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
               {[
                 {
                   step: '01',
@@ -299,6 +301,7 @@ export default function HomePage() {
           </div>
 
           <div
+            className="m-col-2"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -412,7 +415,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <div className="m-col-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
               {PRODUCTS.slice(0, 3).map((product) => (
                 <div
                   key={product.id}
@@ -498,6 +501,7 @@ export default function HomePage() {
         {/* ── CTA BANNER ── */}
         <section style={{ maxWidth: 1280, margin: '80px auto', padding: '0 24px' }}>
           <div
+            className="m-col-1 m-py-sm m-px"
             style={{
               background: 'linear-gradient(135deg, var(--accent) 0%, #5A3E28 100%)',
               borderRadius: 28,

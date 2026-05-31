@@ -248,6 +248,7 @@ export default function CatalogPage() {
 
           {/* Products grid */}
           <div
+            className="m-col-1"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',

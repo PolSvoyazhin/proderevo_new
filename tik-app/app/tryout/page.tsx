@@ -64,7 +64,7 @@ export default function TryoutPage() {
     <>
       <Header />
       <main style={{ flex: 1 }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '56px 24px 80px' }}>
+        <div className="m-pt-sm m-pb-sm m-px" style={{ maxWidth: 1100, margin: '0 auto', padding: '56px 24px 80px' }}>
 
           {/* Page title */}
           <div style={{ textAlign: 'center', marginBottom: 48 }}>

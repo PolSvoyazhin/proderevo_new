@@ -69,3 +69,45 @@ h1, h2, h3, h4, h5 {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.4; transform: scale(0.8); }
 }
+
+/* ─── MOBILE RESPONSIVE  (breakpoint: 768px) ─────────────────────────────── */
+/* !important нужен для переопределения inline-стилей */
+@media (max-width: 768px) {
+  /* Сетки */
+  .m-col-1 { grid-template-columns: 1fr !important; }
+  .m-col-2 { grid-template-columns: 1fr 1fr !important; }
+
+  /* Flex */
+  .m-stack  { flex-direction: column !important; align-items: flex-start !important; }
+  .m-gap-sm { gap: 12px !important; }
+  .m-gap-md { gap: 20px !important; }
+
+  /* Видимость */
+  .m-hide  { display: none !important; }
+  .m-flex  { display: flex !important; }
+  .m-block { display: block !important; }
+
+  /* Отступы */
+  .m-px   { padding-left: 16px  !important; padding-right: 16px  !important; }
+  .m-pt-sm { padding-top: 32px !important; }
+  .m-pt-md { padding-top: 48px !important; }
+  .m-pb-sm { padding-bottom: 32px !important; }
+  .m-pb-md { padding-bottom: 48px !important; }
+  .m-py-sm { padding-top: 40px !important; padding-bottom: 40px !important; }
+
+  /* Типографика */
+  .m-h1 { font-size: 34px !important; line-height: 1.2 !important; }
+  .m-h2 { font-size: 26px !important; }
+  .m-h3 { font-size: 20px !important; }
+  .m-text-sm { font-size: 14px !important; }
+  .m-text-xs { font-size: 12px !important; }
+
+  /* Размеры */
+  .m-h-auto { height: auto !important; min-height: 0 !important; }
+  .m-w-full { width: 100% !important; max-width: 100% !important; }
+  .m-max-w-full { max-width: 100% !important; }
+
+  /* Таблица характеристик */
+  .m-specs-row { grid-template-columns: 1fr !important; padding: 14px 16px !important; }
+  .m-specs-label { font-size: 11px !important; margin-bottom: 4px; }
+}

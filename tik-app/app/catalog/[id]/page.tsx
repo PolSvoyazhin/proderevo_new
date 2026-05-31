@@ -85,7 +85,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           </nav>
 
           {/* Hero */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, paddingTop: 24, paddingBottom: 64 }}>
+          <div className="m-col-1 m-gap-md" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, paddingTop: 24, paddingBottom: 64 }}>
 
             {/* Left — photo placeholders */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -276,6 +276,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
               ].map((row, i) => (
                 <div
                   key={row.label}
+                  className="m-specs-row"
                   style={{
                     display: 'grid', gridTemplateColumns: '220px 1fr',
                     padding: '18px 28px',
@@ -283,7 +284,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                     backgroundColor: i % 2 === 0 ? '#fff' : 'var(--surface)',
                   }}
                 >
-                  <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--muted)' }}>{row.label}</div>
+                  <div className="m-specs-label" style={{ fontSize: 14, fontWeight: 600, color: 'var(--muted)' }}>{row.label}</div>
                   <div style={{ fontSize: 15, color: 'var(--text)' }}>{row.value}</div>
                 </div>
               ))}
@@ -298,7 +299,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <p style={{ fontSize: 16, color: 'var(--muted)', marginBottom: 36, maxWidth: 640 }}>
               Коллекция Т▪И▪К сделана из трёх пород дерева, отобранных за десятилетия работы с outdoor-мебелью.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <div className="m-col-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
               {MATERIAL_STORY.sections.map((s) => (
                 <div
                   key={s.name}
@@ -327,12 +328,15 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
           {/* Уход */}
           <section style={{ paddingBottom: 72 }}>
-            <div style={{
-              backgroundColor: `${product.color}10`,
-              border: `1px solid ${product.color}30`,
-              borderRadius: 24, padding: '40px 48px',
-              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center',
-            }}>
+            <div
+              className="m-col-1 m-py-sm m-px"
+              style={{
+                backgroundColor: `${product.color}10`,
+                border: `1px solid ${product.color}30`,
+                borderRadius: 24, padding: '40px 48px',
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center',
+              }}
+            >
               <div>
                 <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 28, fontWeight: 600, marginBottom: 12 }}>
                   Уход — раз в год
@@ -374,7 +378,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                 {'★★★★★'} · 5.0 из 5 (47 отзывов)
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <div className="m-col-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
               {REVIEWS.map((review) => (
                 <div
                   key={review.name}
@@ -416,7 +420,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 30, fontWeight: 600, marginBottom: 32 }}>
               Другие модели коллекции
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <div className="m-col-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
               {related.map((p) => (
                 <Link
                   key={p.id}
