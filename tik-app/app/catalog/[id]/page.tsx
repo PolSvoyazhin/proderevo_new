@@ -64,10 +64,6 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   if (!product) notFound();
 
   const related = PRODUCTS.filter((p) => p.id !== id).slice(0, 3);
-  const icon = ICON_MAP[product.category] ?? '🪑';
-
-  // Slightly lighter/darker thumbnail shades
-  const thumbShades = ['30', '40', '55', '20'];
 
   return (
     <>
@@ -90,20 +86,21 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             {/* Left — photo placeholders */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {/* Main image */}
+              {/* Main image */}
               <div
                 style={{
                   height: 460,
                   borderRadius: 24,
-                  background: `linear-gradient(145deg, ${product.color}22 0%, ${product.color}55 100%)`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  position: 'relative',
                   border: '1px solid var(--border)',
                   overflow: 'hidden',
+                  position: 'relative',
                 }}
               >
-                <span style={{ fontSize: 120 }}>{icon}</span>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
                 {product.tag && (
                   <div style={{
                     position: 'absolute', top: 20, left: 20,
@@ -114,35 +111,26 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                     {product.tag}
                   </div>
                 )}
-                <div style={{
-                  position: 'absolute', bottom: 16, right: 16,
-                  backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(8px)',
-                  borderRadius: 10, padding: '6px 12px',
-                  fontSize: 11, color: 'var(--muted)', fontWeight: 600,
-                  letterSpacing: '0.05em',
-                }}>
-                  ФОТО СКОРО
-                </div>
               </div>
 
-              {/* Thumbnails */}
+              {/* Thumbnails — одно фото в 4 повторах */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
-                {thumbShades.map((shade, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <div
                     key={i}
                     style={{
                       height: 88,
                       borderRadius: 14,
-                      background: `linear-gradient(135deg, ${product.color}${shade} 0%, ${product.color}${thumbShades[(i + 2) % 4]} 100%)`,
                       border: i === 0 ? `2px solid ${product.color}` : '1px solid var(--border)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
+                      overflow: 'hidden',
                       cursor: 'pointer',
-                      fontSize: 24,
                     }}
                   >
-                    {icon}
+                    <img
+                      src={product.image}
+                      alt=""
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: i === 0 ? 1 : 0.6 }}
+                    />
                   </div>
                 ))}
               </div>
@@ -434,11 +422,13 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                   }}>
                     <div style={{
                       height: 180,
-                      background: `linear-gradient(135deg, ${p.color}18 0%, ${p.color}45 100%)`,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 56,
+                      overflow: 'hidden',
                     }}>
-                      {ICON_MAP[p.category] ?? '🪑'}
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
                     </div>
                     <div style={{ padding: '18px 20px' }}>
                       <div style={{ fontSize: 11, color: 'var(--muted)', fontWeight: 600, marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.06em' }}>

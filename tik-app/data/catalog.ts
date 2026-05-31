@@ -12,7 +12,8 @@ export type Product = {
   tag?: string;
   description: string;
   care: string;
-  color: string; // placeholder color for image
+  color: string;
+  image: string; // path under /public
 };
 
 export type GalleryProject = {
@@ -41,6 +42,7 @@ export const PRODUCTS: Product[] = [
     description: 'Флагманский комплект коллекции — диван, два кресла и кофейный стол из единой партии термоясеня. Подушки из влагостойкой ткани Sunbrella. Скрытый крепёж — никаких видимых болтов.',
     care: 'Масло Burma 1 раз в год, 30 минут на весь комплект',
     color: '#8B6F47',
+    image: '/products/singapore.jpg',
   },
   {
     id: 'jakarta',
@@ -56,6 +58,7 @@ export const PRODUCTS: Product[] = [
     description: 'Монументальный диван с глубоким посадочным местом. Подходит для просторных террас и летних веранд. Разборная конструкция — ножки снимаются для хранения зимой.',
     care: 'Масло Burma 1 раз в год',
     color: '#7A6040',
+    image: '/products/jakarta.jpg',
   },
   {
     id: 'bali',
@@ -72,6 +75,7 @@ export const PRODUCTS: Product[] = [
     description: 'Угловой диван для зонирования открытого пространства. Модульная конструкция — секции переставляются. Белые подушки из ткани, устойчивой к выцветанию и влаге.',
     care: 'Масло Burma 1 раз в год, подушки — ручная стирка',
     color: '#A0845C',
+    image: '/products/bali.jpg',
   },
   {
     id: 'madeira',
@@ -88,6 +92,7 @@ export const PRODUCTS: Product[] = [
     description: 'Комплект для отдыха у бассейна или на открытой террасе. Диван, раскладной шезлонг в 5 положениях и столик. Всё из единой партии — цвет дерева совпадает.',
     care: 'Масло Burma раз в сезон',
     color: '#C4A882',
+    image: '/products/madeira.jpg',
   },
   {
     id: 'milan',
@@ -103,6 +108,7 @@ export const PRODUCTS: Product[] = [
     description: 'Обеденный стол из цельного массива Ироко на 8–10 персон. Монолитная столешница без стыков. Сечение ножек 10×10 см. На монолитные столешницы — гарантия 20 лет.',
     care: 'Масло Burma раз в сезон, 20 минут',
     color: '#6B4F35',
+    image: '/products/milan.jpg',
   },
   {
     id: 'capetown',
@@ -118,6 +124,7 @@ export const PRODUCTS: Product[] = [
     description: 'Широкое лаунж-кресло с высокой спинкой и объёмными подушками. Подходит для одиночного отдыха и в паре к любому дивану коллекции. Разборная конструкция.',
     care: 'Масло Burma 1 раз в год',
     color: '#9B7D5A',
+    image: '/products/capetown.jpg',
   },
   {
     id: 'sochi',
@@ -133,6 +140,7 @@ export const PRODUCTS: Product[] = [
     description: 'Складной шезлонг с регулируемой спинкой в 5 положениях. Компактно складывается для хранения. Самоочищающийся термоясень — после дождя не нужно вытирать.',
     care: 'Протереть влажной тряпкой, масло Burma раз в 2 года',
     color: '#B89870',
+    image: '/products/sochi.jpg',
   },
 ];
 

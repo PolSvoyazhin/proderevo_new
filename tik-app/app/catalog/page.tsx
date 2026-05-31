@@ -37,9 +37,18 @@ function ProductCard({ product }: { product: Product }) {
           position: 'relative',
           flexShrink: 0,
           cursor: 'pointer',
+          overflow: 'hidden',
         }}
       >
-        <span style={{ fontSize: 64 }}>{icon}</span>
+        <img
+          src={product.image}
+          alt={product.name}
+          style={{
+            position: 'absolute', inset: 0,
+            width: '100%', height: '100%',
+            objectFit: 'cover',
+          }}
+        />
 
         {product.tag && (
           <div
